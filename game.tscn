@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://ckudr8chj1kgo" path="res://assets/player.tscn" id="2_feb5d"]
 [ext_resource type="PackedScene" uid="uid://b3fa850nppy3s" path="res://assets/animatronic.tscn" id="3_feb5d"]
 [ext_resource type="Shader" uid="uid://gck3qse0e7co" path="res://assets/shaders/crt.gdshader" id="4_7jktm"]
-[ext_resource type="Script" uid="uid://bn34msj8cfkex" path="res://assets/mouse_fix.gd" id="5_ryrav"]
+[ext_resource type="Script" uid="uid://bn34msj8cfkex" path="res://assets/scripts/mouse_fix.gd" id="5_ryrav"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_7jktm"]
 viewport_path = NodePath("SubViewport")
@@ -27,6 +27,7 @@ sky_material = SubResource("ProceduralSkyMaterial_34p2v")
 [sub_resource type="Environment" id="Environment_qw8yw"]
 background_mode = 2
 sky = SubResource("Sky_vvdt4")
+fog_enabled = true
 
 [node name="Node3D" type="Node3D" unique_id=750293853]
 

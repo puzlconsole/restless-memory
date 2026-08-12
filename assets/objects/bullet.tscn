@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d2nifma7fruv1"]
 
-[ext_resource type="Script" uid="uid://b3kcpkurdjjgh" path="res://assets/objects/bullet.gd" id="1_r45dv"]
+[ext_resource type="Script" uid="uid://b3kcpkurdjjgh" path="res://assets/scripts/bullet.gd" id="1_r45dv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3mip4"]
 emission_enabled = true

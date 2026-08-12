@@ -1,7 +1,11 @@
 [gd_resource type="ShaderMaterial" format=3 uid="uid://bed3kw0iy1wc7"]
 
 [ext_resource type="Shader" uid="uid://cxe6ry158ncgn" path="res://assets/shaders/psx.gdshader" id="1_61muc"]
-[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="2_fejne"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ryrav"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_7jktm"]
+noise = SubResource("FastNoiseLite_ryrav")
 
 [resource]
 render_priority = 0
@@ -18,7 +22,7 @@ shader_parameter/uv1_offset = Vector3(0, 0, 0)
 shader_parameter/uv2_scale = Vector3(0, 0, 0)
 shader_parameter/uv2_offset = Vector3(0, 0, 0)
 shader_parameter/albedo = Color(1, 1, 1, 1)
-shader_parameter/texture_albedo = ExtResource("2_fejne")
+shader_parameter/texture_albedo = SubResource("NoiseTexture2D_7jktm")
 shader_parameter/resolution = Vector2i(320, 240)
 shader_parameter/affine_mapping = true
 shader_parameter/alpha_scissor = 0.5
