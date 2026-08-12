@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://elst0xn32iil"]
+
+[ext_resource type="PackedScene" uid="uid://cwf7cnxvxc3pg" path="res://court.tscn" id="1_e2o6t"]
+[ext_resource type="PackedScene" uid="uid://ckudr8chj1kgo" path="res://player.tscn" id="2_feb5d"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_34p2v"]
+
+[sub_resource type="Sky" id="Sky_vvdt4"]
+sky_material = SubResource("ProceduralSkyMaterial_34p2v")
+
+[sub_resource type="Environment" id="Environment_qw8yw"]
+background_mode = 2
+sky = SubResource("Sky_vvdt4")
+
+[node name="Node3D" type="Node3D" unique_id=750293853]
+
+[node name="Node3D2" parent="." unique_id=552944382 instance=ExtResource("2_feb5d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0677035, 0)
+
+[node name="Node3D" parent="." unique_id=1124936428 instance=ExtResource("1_e2o6t")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=522178609]
+environment = SubResource("Environment_qw8yw")
