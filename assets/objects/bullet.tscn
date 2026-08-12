@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://d2nifma7fruv1"]
+
+[ext_resource type="Script" uid="uid://b3kcpkurdjjgh" path="res://assets/objects/bullet.gd" id="1_r45dv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3mip4"]
+emission_enabled = true
+emission = Color(0.14117648, 1, 1, 1)
+emission_energy_multiplier = 8.88
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_qw8yw"]
+radius = 0.2
+
+[node name="RigidBody3D" type="RigidBody3D" unique_id=2080136584]
+mass = 0.1
+gravity_scale = 0.0
+script = ExtResource("1_r45dv")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="." unique_id=705655065]
+radius = 0.2
+material = SubResource("StandardMaterial3D_3mip4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=985397012]
+shape = SubResource("SphereShape3D_qw8yw")
+disabled = true

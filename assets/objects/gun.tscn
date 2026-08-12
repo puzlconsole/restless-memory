@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://clo7by5avee34"]
+
+[ext_resource type="Script" uid="uid://dj4rljgnriwo2" path="res://gun.gd" id="1_jpjqh"]
+[ext_resource type="PackedScene" uid="uid://d2nifma7fruv1" path="res://assets/objects/bullet.tscn" id="2_2n8u1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7jktm"]
+albedo_color = Color(0.427493, 0.42749307, 0.42749307, 1)
+metallic = 1.0
+metallic_specular = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ryrav"]
+albedo_color = Color(0.1111969, 0.11119684, 0.11119681, 1)
+
+[node name="Node3D" type="Node3D" unique_id=1481011387]
+script = ExtResource("1_jpjqh")
+bullet_scene = ExtResource("2_2n8u1")
+fire_rate = 0.3
+bullet_speed = 10000.0
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=155458893]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.024414063, 0)
+size = Vector3(1, 0.19897461, 0.19824219)
+material = SubResource("StandardMaterial3D_7jktm")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=501577220]
+transform = Transform3D(0.5470684, -0.8370879, 0, 0.8370879, 0.5470684, 0, 0, 0, 1, -0.44974777, -0.1859842, 0)
+size = Vector3(0.4260254, 0.2685547, 0.2421875)
+material = SubResource("StandardMaterial3D_ryrav")
+
+[node name="Muzzle" type="Marker3D" parent="." unique_id=9808923]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5059806, 0, 0)

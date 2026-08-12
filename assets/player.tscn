@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ckudr8chj1kgo"]
 
 [ext_resource type="Script" uid="uid://82l1c27xikiy" path="res://assets/scripts/character_body_3d.gd" id="1_674bt"]
+[ext_resource type="PackedScene" uid="uid://clo7by5avee34" path="res://assets/objects/gun.tscn" id="2_3mip4"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qw8yw"]
 
@@ -22,6 +23,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9829719, 0)
 
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D/TwistPivot/PitchPivot" unique_id=975987838]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5039695, -0.3777107)
+
+[node name="Node3D" parent="CharacterBody3D/TwistPivot/PitchPivot" unique_id=1481011387 instance=ExtResource("2_3mip4")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.40000004, -0.1829719, -1.0999999)
 
 [node name="CeilingCast" type="ShapeCast3D" parent="CharacterBody3D" unique_id=865271856]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9972467, 0)
