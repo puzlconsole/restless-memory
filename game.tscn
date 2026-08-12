@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cwf7cnxvxc3pg" path="res://assets/levels/court.tscn" id="1_e2o6t"]
 [ext_resource type="PackedScene" uid="uid://ckudr8chj1kgo" path="res://assets/player.tscn" id="2_feb5d"]
+[ext_resource type="PackedScene" uid="uid://b3fa850nppy3s" path="res://assets/animatronic.tscn" id="3_feb5d"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_34p2v"]
 
@@ -21,3 +22,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0677035, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=522178609]
 environment = SubResource("Environment_qw8yw")
+
+[node name="Animatronic" parent="." unique_id=1983089713 instance=ExtResource("3_feb5d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.007921696, 0, 3.4178586)

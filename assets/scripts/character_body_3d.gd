@@ -54,6 +54,7 @@ var jump_buffer_counter: float = 0.0
 var coyote_timer: float = 0.0
 
 func _ready() -> void:
+	add_to_group("player")
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	jump_velocity = sqrt(2.0 * (current_gravity * gravity_multiplier) * jump_height)
 	current_speed = walk_speed
