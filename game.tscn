@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://elst0xn32iil"]
 
-[ext_resource type="PackedScene" uid="uid://cwf7cnxvxc3pg" path="res://court.tscn" id="1_e2o6t"]
-[ext_resource type="PackedScene" uid="uid://ckudr8chj1kgo" path="res://player.tscn" id="2_feb5d"]
+[ext_resource type="PackedScene" uid="uid://cwf7cnxvxc3pg" path="res://assets/levels/court.tscn" id="1_e2o6t"]
+[ext_resource type="PackedScene" uid="uid://ckudr8chj1kgo" path="res://assets/player.tscn" id="2_feb5d"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_34p2v"]
 
