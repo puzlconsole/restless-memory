@@ -3,6 +3,21 @@
 [ext_resource type="PackedScene" uid="uid://cwf7cnxvxc3pg" path="res://assets/levels/court.tscn" id="1_e2o6t"]
 [ext_resource type="PackedScene" uid="uid://ckudr8chj1kgo" path="res://assets/player.tscn" id="2_feb5d"]
 [ext_resource type="PackedScene" uid="uid://b3fa850nppy3s" path="res://assets/animatronic.tscn" id="3_feb5d"]
+[ext_resource type="Shader" uid="uid://gck3qse0e7co" path="res://assets/shaders/crt.gdshader" id="4_7jktm"]
+[ext_resource type="Script" uid="uid://bn34msj8cfkex" path="res://assets/mouse_fix.gd" id="5_ryrav"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_7jktm"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qw8yw"]
+resource_local_to_scene = true
+shader = ExtResource("4_7jktm")
+shader_parameter/tex = SubResource("ViewportTexture_7jktm")
+shader_parameter/mask_type = 4
+shader_parameter/curve = 0.0
+shader_parameter/color_offset = 0.0
+shader_parameter/mask_brightness = 1.0
+shader_parameter/aspect = 0.75
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_34p2v"]
 
@@ -15,13 +30,28 @@ sky = SubResource("Sky_vvdt4")
 
 [node name="Node3D" type="Node3D" unique_id=750293853]
 
-[node name="Node3D2" parent="." unique_id=552944382 instance=ExtResource("2_feb5d")]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1719894404 node_paths=PackedStringArray("subviewport_node")]
+material = SubResource("ShaderMaterial_qw8yw")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+script = ExtResource("5_ryrav")
+subviewport_node = NodePath("../SubViewport")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=772925628]
+size = Vector2i(1920, 1080)
+
+[node name="Node3D2" parent="SubViewport" unique_id=552944382 instance=ExtResource("2_feb5d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0677035, 0)
 
-[node name="Node3D" parent="." unique_id=1124936428 instance=ExtResource("1_e2o6t")]
+[node name="Node3D" parent="SubViewport" unique_id=1124936428 instance=ExtResource("1_e2o6t")]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=522178609]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewport" unique_id=522178609]
 environment = SubResource("Environment_qw8yw")
 
-[node name="Animatronic" parent="." unique_id=1983089713 instance=ExtResource("3_feb5d")]
+[node name="Animatronic" parent="SubViewport" unique_id=1983089713 instance=ExtResource("3_feb5d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.007921696, 0, 3.4178586)
