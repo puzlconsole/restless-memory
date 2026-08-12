@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://ckudr8chj1kgo"]
+
+[ext_resource type="Script" uid="uid://82l1c27xikiy" path="res://assets/scripts/character_body_3d.gd" id="1_674bt"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qw8yw"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vvdt4"]
+
+[node name="Player" type="Node3D" unique_id=552944382]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1223413597]
+script = ExtResource("1_674bt")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=2044515892]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9829719, 0)
+shape = SubResource("CapsuleShape3D_qw8yw")
+
+[node name="TwistPivot" type="Node3D" parent="CharacterBody3D" unique_id=831475012]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9829719, 0)
+
+[node name="PitchPivot" type="Node3D" parent="CharacterBody3D/TwistPivot" unique_id=1313995391]
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D/TwistPivot/PitchPivot" unique_id=975987838]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5039695, -0.3777107)
+
+[node name="CeilingCast" type="ShapeCast3D" parent="CharacterBody3D" unique_id=865271856]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9972467, 0)
+shape = SubResource("CapsuleShape3D_vvdt4")
